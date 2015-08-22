@@ -1,0 +1,8 @@
+html
+  head
+    title Bookmarklets
+  body
+    for b in bookmarklets
+      a(href="javascript:" + b.minified) #{b.name}
+
+
