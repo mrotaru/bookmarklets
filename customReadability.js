@@ -9,7 +9,7 @@
     pres[i].style.lineHeight = "1.2"; 
     pres[i].style.pageBreakInside = 'avoid';
   }
-  var toRemove = document.querySelectorAll(".entry-origin, .entry-meta, .entry-content .navbar");
+  var toRemove = document.querySelectorAll(".entry-origin, .entry-meta, .entry-content .navbar, .mr_social_sharing_wrapper");
   for (var i=0; i < toRemove.length; ++i) {
     if (toRemove[i].parentNode) {
       toRemove[i].parentNode.removeChild(toRemove[i]);
