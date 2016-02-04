@@ -1,6 +1,24 @@
 (function () {
+  var head = document.querySelector("head");
+  var head = document.getElementsByTagName('head')[0];
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js';
+  script.onload = function() {
+    console.log('LOADED');
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  }
+  head.appendChild(script);
+
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css';
+  head.appendChild(css);
+
   var article = document.querySelector(".hentry");
-  article.style.maxWidth = "920px"; 
+  article.style.maxWidth = "1100px"; 
   article.style.fontFamily = "Delicious"; 
   article.style.lineHeight = "1.2"; 
   var pres = document.querySelectorAll("pre, code");
