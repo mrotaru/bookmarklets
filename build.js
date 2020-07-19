@@ -1,7 +1,7 @@
 var path = require('path');
 var fs = require('fs');
-var uglify = require('uglify-js');
 var jade = require('jade');
+var Terser = require("terser");
 
 var bookmarklets = [];
 
@@ -13,7 +13,7 @@ for (var i=0; i < files.length; ++i) {
     var b = { name: path.basename(file) };
     // minfy
     b.code = fs.readFileSync(file).toString();
-    b.minified = uglify.minify(b.code, {fromString: true}).code;
+    b.minified = Terser.minify(b.code).code;
     // write minified bookmarklet
     var out = './build/' + b.name;
     if(process.env.DEBUG) {
