@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jade": "^1.11.0",
-    "terser": "^4.8.0"
+    "terser": "^4.8.1"
   },
   "devDependencies": {}
 }
